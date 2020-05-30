@@ -5,11 +5,13 @@ let path = require('path')
 console.log(path.resolve(__dirname, '../config'))
 const rootDir = path.resolve(__dirname, '../')
 console.log(process.cwd(), rootDir)
+process.env.appDir = process.cwd()
 commander.version('1.0.0')
 commander.command('run <env>').description('创建你的项目').action((env, destination) => {
   console.log(`new ${env}`);
   if(env === 'dev') {
-    var aa = shell.exec(`npx cross-env NODE_ENV=development webpack-dev-server --config=${rootDir}/config/webpack.config.babel.js --progress`, {
+    shell.cd(rootDir)
+    var aa = shell.exec(`npx cross-env NODE_ENV=development webpack-dev-server --config=config/webpack.config.babel.js --progress`, {
       slient: true
     })
     console.log(aa.stdout)

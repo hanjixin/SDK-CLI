@@ -7,6 +7,8 @@ import { resolvePath as resolve } from './path'
 const isDev = process.env.NODE_ENV === 'development'
 const isTest = process.env.NODE_ENV === 'test'
 const isPrd = !isDev && !isTest
+console.log(process.env.appDir)
+const appDir = process.env.appDir
 console.log(process.cwd(), 'cwd')
 // let define = isDev
 //   ? require('../env.development.js')
@@ -28,8 +30,8 @@ const getCssLoader = () => {
 const cssLoader = getCssLoader()
 
 const entry = {}
-entry[`${NAME_SPACE.toLowerCase()}${isPrd && prdVersion ? '-' + prdVersion : ''}`] = './src/index.js'
-entry[`${NAME_SPACE.toLowerCase()}-latest`] = './src/index.js'
+entry[`${NAME_SPACE.toLowerCase()}${isPrd && prdVersion ? '-' + prdVersion : ''}`] = appDir + '/src/index.js'
+entry[`${NAME_SPACE.toLowerCase()}-latest`] = appDir + '/src/index.js'
 
 const options = {
   entry,
@@ -103,7 +105,7 @@ const options = {
     new htmlPlugin({
       hash: true,
       filename: 'index.html',
-      template: './src/index.ejs',
+      template: appDir + '/src/index.ejs',
       inject: 'head',
       files: {
         js: thirdPartyJS
@@ -118,7 +120,7 @@ const options = {
     }),
     new CopyWebpackPlugin([
       {
-        from: resolve('./public'),
+        from: appDir + '/public',
         to: BUILD_DIR,
         ignore: ['*.md']
       }

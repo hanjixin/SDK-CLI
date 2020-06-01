@@ -5,7 +5,7 @@
   "main": "env.development.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "sdk-cli run dev"
+    "dev": "sdk-cli serve"
   },
   "keywords": [],
   "author": "",

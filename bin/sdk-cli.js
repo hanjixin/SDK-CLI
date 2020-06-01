@@ -45,6 +45,7 @@ process.env.rootDir = path.resolve(__dirname, '../')
 // 重构
 const Service = require('../lib/Service')
 const service = new Service(process.env.SKD_CLI_CONTEXT || process.cwd())
+process.SDK_CLI_SERVICE = service
 const rawArgv = process.argv.slice(2)
 const args = require('minimist')(rawArgv, {
   boolean: [

@@ -2,14 +2,14 @@ import webpack from 'webpack'
 import uglify from 'uglifyjs-webpack-plugin'
 import htmlPlugin from 'html-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
-import { PORT, NAME_SPACE, SDK_EXE, THIRD_PARTY } from './constants'
+import { PORT, NAME_SPACE, SDK_EXE, THIRD_PARTY, OUTPUT_DIR } from './constants'
 import { resolvePath as resolve } from './path'
 const isDev = process.env.NODE_ENV === 'development'
 const isTest = process.env.NODE_ENV === 'test'
 const isPrd = !isDev && !isTest
 console.log(process.env.appDir)
 const appDir = process.env.appDir
-const BUILD_DIR = appDir + '/dist'
+const BUILD_DIR = appDir + '/'  + OUTPUT_DIR
 
 console.log(process.cwd(), 'cwd')
 // let define = isDev

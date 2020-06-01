@@ -12,7 +12,9 @@ const version = shell.exec('git describe --abbrev=0').stdout.trim()
 if (!version && buidMode === 'production') {
   console.warn('\x1b[91m \n\nprd构建前请先打tag!\n')
 }
-
+// console.log(process.env.SDK_CLI_SERVICE, 'process.SDK_CLI_SERVICE')
+// console.log(process.env, 'process.SDK_CLI_SERVICE')
 const cmd = `BUILD_VERSION=${version} NODE_ENV=${buidMode} webpack --config=config/webpack.config.babel.js`
 shell.exec('npm run clean')
 crossEnv(cmd.split(' '))
+console.log(`\x1b[32m开始编译${buidMode}`)

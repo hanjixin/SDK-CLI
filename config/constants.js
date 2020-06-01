@@ -1,6 +1,10 @@
 import { resolvePath } from './path'
 // SDK名称
-const NAME_SPACE = 'HKYIM'
+// console.log(process.env.SDK_CLI_SERVICE, 'SDK_CLI_SERVICE')
+// process.exit(1)
+const projectOptions = process.env.SDK_CLI_SERVICE ? JSON.parse(process.env.SDK_CLI_SERVICE).projectOptions : {}
+const NAME_SPACE = projectOptions.name || 'HKYIM'
+const OUTPUT_DIR = projectOptions.outputDir || 'dist'
 const PORT = 3006
 const SRC_DIR = resolvePath('src')
 const BUILD_DIR = resolvePath('build')
@@ -18,4 +22,4 @@ const SDKOptions = {
 // SDK运行代码
 const SDK_EXE = `${NAME_SPACE}.init(${JSON.stringify(SDKOptions)})`
 
-export { PORT, SRC_DIR, BUILD_DIR, SDK_EXE, NAME_SPACE, THIRD_PARTY }
+export { PORT, SRC_DIR, BUILD_DIR, SDK_EXE, NAME_SPACE, THIRD_PARTY, OUTPUT_DIR }

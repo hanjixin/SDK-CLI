@@ -1,6 +1,6 @@
 
 module.exports = {
-    name: 'HKYIM',
+    name: 'HKYIM2',
     dingdingNoticeId: 'learn',
     lintShow: false,
     outputDir: 'dist',

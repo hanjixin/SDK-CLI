@@ -2,7 +2,7 @@ import webpack from 'webpack'
 import uglify from 'uglifyjs-webpack-plugin'
 import htmlPlugin from 'html-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
-import { PORT, NAME_SPACE, SDK_EXE, THIRD_PARTY, OUTPUT_DIR } from './constants'
+import { PORT, NAME_SPACE, SDK_EXE, THIRD_PARTY, OUTPUT_DIR, projectOptions } from './constants'
 import { resolvePath as resolve } from './path'
 const isDev = process.env.NODE_ENV === 'development'
 const isTest = process.env.NODE_ENV === 'test'
@@ -56,13 +56,13 @@ const options = {
     }
   },
 
-  devServer: {
+  devServer: Object.assign({
     contentBase: BUILD_DIR,
     disableHostCheck: true,
     compress: true,
     port: PORT,
     host: '0.0.0.0'
-  },
+  }, projectOptions.devServer || {}),
   module: {
     rules: [
       {

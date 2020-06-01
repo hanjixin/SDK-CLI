@@ -5,7 +5,7 @@ module.exports = {
     lintShow: false,
     outputDir: 'dist',
     devServer: {
-        port: 3000
+        port: 3008
     }
   };
   

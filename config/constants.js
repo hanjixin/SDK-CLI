@@ -22,4 +22,4 @@ const SDKOptions = {
 // SDK运行代码
 const SDK_EXE = `${NAME_SPACE}.init(${JSON.stringify(SDKOptions)})`
 
-export { PORT, SRC_DIR, BUILD_DIR, SDK_EXE, NAME_SPACE, THIRD_PARTY, OUTPUT_DIR }
+export { PORT, SRC_DIR, BUILD_DIR, SDK_EXE, NAME_SPACE, THIRD_PARTY, OUTPUT_DIR, projectOptions }

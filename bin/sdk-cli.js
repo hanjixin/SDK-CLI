@@ -4,10 +4,10 @@ let shell = require('shelljs')
 let path = require('path')
 // let env = require('dotenv').config()
 // console.log(env, )
-console.log(process.argv)
-console.log(path.resolve(__dirname, '../config'))
+// console.log(process.argv\
+// console.log(path.resolve(__dirname, '../config'))
 const rootDir = path.resolve(__dirname, '../')
-console.log(process.cwd(), rootDir)
+// console.log(process.cwd(), rootDir)
 process.env.appDir = process.cwd()
 
 process.env.rootDir = path.resolve(__dirname, '../')

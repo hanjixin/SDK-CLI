@@ -10,6 +10,12 @@
   "scripts": {
     "test": "dev"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "commit-msg": "vcm"
+    }
+  },
   "author": "Hank",
   "license": "ISC",
   "devDependencies": {

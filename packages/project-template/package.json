@@ -13,7 +13,9 @@
       "commit-msg": "vcm"
     }
   },
-  "keywords": ["SDK-template"],
+  "keywords": [
+    "SDK-template"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {

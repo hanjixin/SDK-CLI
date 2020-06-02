@@ -20,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "dot": "^1.1.3",
+    "husky": "^4.2.5",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "vcm-cli": "^1.0.1"

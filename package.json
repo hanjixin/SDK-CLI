@@ -1,12 +1,15 @@
 {
-  "name": "sdk-cli",
-  "version": "1.0.0",
+  "name": "jssdk-cli",
+  "version": "1.0.1",
   "description": "SDK-CLI",
   "main": "index.js",
   "bin": {
     "sdk": "./bin/sdk.js",
     "sdk-cli": "./bin/sdk-cli.js"
   },
+  "keywords": [
+    "sdk-cli @sdk-cli SDK-template jssdk-cli"
+  ],
   "scripts": {
     "test": "dev"
   },
@@ -49,6 +52,7 @@
     "@babel/register": "^7.8.6",
     "@babel/runtime": "^7.9.2",
     "babel-eslint": "^10.1.0",
+    "chalk": "^4.0.0",
     "commander": "^5.1.0",
     "copy-webpack-plugin": "^5.1.1",
     "dot": "^1.1.3",

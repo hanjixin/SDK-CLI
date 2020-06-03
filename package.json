@@ -1,6 +1,6 @@
 {
   "name": "jssdk-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "SDK-CLI",
   "main": "index.js",
   "bin": {
@@ -8,7 +8,11 @@
     "sdk-cli": "./bin/sdk-cli.js"
   },
   "keywords": [
-    "sdk-cli @sdk-cli SDK-template jssdk-cli"
+    "sdk-cli",
+    "@sdk-cli",
+    "SDK-template",
+    "jssdk-cli",
+    "sdk"
   ],
   "scripts": {
     "test": "dev"
